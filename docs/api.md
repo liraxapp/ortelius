@@ -2,26 +2,24 @@
 
 ## X Chain API
 
-| Name                                                                        | Route                                    |
-|---------------------------                                                 | ----------------------------------------|
-| [Search](#search---xsearch)                                                 | /x/search                                |
-| [List Transactions](#list-transactions---xtransactions)                     | /x/transactions                          |
-| [Get Transaction](#get-transaction---xtransactionsid)                       | /x/transactions/:id                      |
-| [Aggregate Transactions](#aggregate-transactions---xaggregatetransactions) | /x/transactions/aggregate                 |
-| [List Assets](#list-assets---xassets)                                       | /x/assets                                |
-| [Get Asset](#get-asset---xassetsalias_or_id)                                | /x/assets/:alias_or_id                   |
-| [List Addresses](#list-addresses---xaddresses)                              | /x/addresses                             |
-| [Get Address](#get-address---xaddressesid)                                  | /x/addresses/:id                         |
+| Name                                                    | Route
+|---                                                      | ---
+| [Search](#search---xsearch)                             | `/x/search`
+| [Aggregates](#aggregates---xaggregates)                 | `/x/aggregates`
+| [List Transactions](#list-transactions---xtransactions) | `/x/transactions`
+| [Get Transaction](#get-transaction---xtransactionsid)   | `/x/transactions/:id`
+| [List Assets](#list-assets---xassets)                   | `/x/assets`
+| [Get Asset](#get-asset---xassetsalias_or_id)            | `/x/assets/:alias_or_id`
+| [List Addresses](#list-addresses---xaddresses)          | `/x/addresses`
+| [Get Address](#get-address---xaddressesid)              | `/x/addresses/:id`
 
-### Search - /x/search
+### Search - `/x/search`
 
-Searches for an indexed item based on it's ID or keywords.
-
-NOTE: Currenly only IDs are supported.
+Searches for a Transaction, Asset, or Address based on its ID.
 
 Params:
 
-`query` (Required) - The term(s) to search for
+`query` (Required) - The ID to search for.
 
 #### Response:
 
@@ -37,43 +35,58 @@ Params:
 }
 ```
 
-### List Transactions - /x/transactions
+### List Transactions - `/x/transactions`
 
-#### Global list Transaction Params:
+[*Global list params*](#Global-List-Params)
 
-`disableCount` - Bool value = true will suppress counting in results, count will be 0 in results
+- `id` - A transaction ID to filter by.
 
-#### Params:
+- `chainID` - A chain ID to filter by. Maybe be passed multiple times. Supports X-chain and P-chain chains.
 
-`sort` - The sorting method to use. Options: timestamp-asc, timestamp-desc. Default: timestamp-asc
+- `assetID` - A asset ID to filter by.
 
-'disableGenesis' - Bool value = true will suppress genesis input/output records in results.
+- `address` - An address ID to filter by. Maybe be passed multiple times.
+
+- `startTime` - The Time to start calculating from. Defaults to the Time of the first known transaction. Valid values are unix timestamps (in seconds) or RFC3339 datetime strings.
+
+- `endTime` - The Time to end calculating to. Defaults to the current Time. Valid values are unix timestamps (in seconds) or RFC3339 datetime strings.
+
+- `disableGenesis` - Bool value = true will suppress genesis input/output records in results.
+
+- `sort` - The sorting method to use. Options: `timestamp-asc`, `timestamp-desc`. Default: `timestamp-asc`
+
 
 #### Response:
 
 Array of transaction objects
 
-### Get Transaction - /x/transactions/:id
+### Get Transaction - `/x/transactions/:id`
 
 #### Params:
 
-`id` - The ID of the transaction to get
+- `id` - The ID of the transaction to get
 
 #### Response
 
 The transaction object
 
-### Aggregate Transactions - /x/transactions/aggregates or /x/aggregates
+### Aggregate Transactions - `/x/aggregates`
+
+(Previously was `/x/transactions/aggregates` which now aliases to this endpoint)
 
 #### Params:
 
-`startTime` - The Time to start calculating from. Defaults to the Time of the first known transaction. Valid values are unix timestamps (in seconds) or RFC3339 datetime strings.
+- `chainID` - The chain ID to aggregate. Maybe be passed multiple times. Supports X-chain and P-chain chains.
 
-`endTime` - The Time to end calculating to. Defaults to the current Time. Valid values are unix timestamps (in seconds) or RFC3339 datetime strings.
+- `assetID` - The asset ID to aggregate.
 
-`intervalSize` - If given, a list of intervals of the given size from startTime to endTime will be returned, with the aggregates for each interval. Valid values are `minute`, `hour`, `day`, `week`, `month`, `year`, or a valid Go duration string as described here: https://golang.org/pkg/Time/#ParseDuration 
+- `startTime` - The Time to start calculating from. Defaults to the Time of the first known transaction. Valid values are unix timestamps (in seconds) or RFC3339 datetime strings.
 
-`version` - If 1 will use new asset aggregate tables
+- `endTime` - The Time to end calculating to. Defaults to the current Time. Valid values are unix timestamps (in seconds) or RFC3339 datetime strings.
+
+- `intervalSize` - If given, a list of intervals of the given size from startTime to endTime will be returned, with the aggregates for each interval. Valid values are `minute`, `hour`, `day`, `week`, `month`, `year`, or a valid Go duration string as described here: https://golang.org/pkg/Time/#ParseDuration
+
+- `version` - If 1 will use new asset aggregate tables
 
 #### Response:
 
@@ -108,37 +121,37 @@ The transaction object
 }
 ```
 
-### List Assets - /x/assets
+### List Assets - `/x/assets`
 
-#### Global list Asset Params:
+[*Global list params*](#Global-List-Params)
 
-`disableCount` - Bool value = true will suppress counting in results, count will be 0 in results
+- `id` - An asset ID to filter by.
 
-#### Response:
-
-Array of asset objects
-
-### Get Asset - /x/assets/:alias_or_id
-
-#### Params:
-
-`alias_or_id` - The alias or ID of the asset to get
+- `alias` - An alias string to filter by.
 
 #### Response:
 
 Array of asset objects
 
-### List Addresses - /x/addresses
-
-#### Global list Address Params:
-
-`disableCount` - Bool value = true will suppress counting in results, count will be 0 in results
-
-`version` - If 1 will use new asset aggregate count tables
+### Get Asset - `/x/assets/:alias_or_id`
 
 #### Params:
 
-<pagination params>
+- `alias_or_id` - The alias or ID of the asset to get
+
+#### Response:
+
+Array of asset objects
+
+### List Addresses - `/x/addresses`
+
+#### Params:
+
+[*Global list params*](#Global-List-Params)
+
+- `address` - An address ID to filter by.
+
+- `version` - If 1 will use new asset aggregate count tables
 
 #### Response:
 
@@ -166,11 +179,11 @@ Array of Address objects
 ]
 ```
 
-### Get Address - /x/addresses/:address
+### Get Address - `/x/addresses/:address`
 
 #### Params:
 
-`address` - The base58-encoded Address to show.
+- `address` - The base58-encoded Address to show.
 
 #### Response:
 
@@ -184,6 +197,18 @@ Array of Address objects
   "utxoCount": 0
 }
 ```
-## P Chain API (Not yet implemented)
 
-## C Chain API (Not yet implemented)
+## P-Chain API
+
+
+## Global List Params
+
+These parameters are applied to all List endpoints.
+
+- `limit` -  The maximum number of items to return.
+    - Max: `500`
+    - Default: `500`
+
+- `offset` - The number of items to skip.
+
+- `disableCount` - Bool. Suppress counting in results, `count` will be 0 in response. If you are not using the returned counts you should set this to enable better performance.
