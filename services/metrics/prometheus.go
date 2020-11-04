@@ -37,12 +37,17 @@ func (m *Metrics) Init() {
 
 func (m *Metrics) CounterInit(name string, help string) {
 	m.Init()
+	m.metricsLock.Lock()
+	defer m.metricsLock.Unlock()
+
+	if _, ok := m.counters[name]; ok {
+		return
+
+	}
 	counter := promauto.NewCounter(prometheus.CounterOpts{
 		Name: name,
 		Help: help,
 	})
-	m.metricsLock.Lock()
-	defer m.metricsLock.Unlock()
 	m.counters[name] = &counter
 }
 
@@ -68,13 +73,19 @@ func (m *Metrics) CounterAdd(name string, v float64) error {
 
 func (m *Metrics) HistogramInit(name string, help string, buckets []float64) {
 	m.Init()
+	m.metricsLock.Lock()
+	defer m.metricsLock.Unlock()
+
+	if _, ok := m.histograms[name]; ok {
+		return
+
+	}
+
 	histogram := promauto.NewHistogram(prometheus.HistogramOpts{
 		Name:    name,
 		Help:    help,
 		Buckets: buckets,
 	})
-	m.metricsLock.Lock()
-	defer m.metricsLock.Unlock()
 	m.histograms[name] = &histogram
 }
 
