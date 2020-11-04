@@ -27,6 +27,7 @@ type Config struct {
 	Chains    `json:"chains"`
 	Stream    `json:"stream"`
 	Services  `json:"services"`
+	Health    `json:"health"`
 }
 
 type Chain struct {
@@ -39,10 +40,9 @@ type Chains map[string]Chain
 
 type Services struct {
 	Logging logging.Config `json:"logging"`
-
-	API    `json:"api"`
-	*DB    `json:"db"`
-	*Redis `json:"redis"`
+	API     `json:"api"`
+	*DB     `json:"db"`
+	*Redis  `json:"redis"`
 }
 
 type API struct {
@@ -86,6 +86,16 @@ type Consumer struct {
 	GroupName string    `json:"groupName"`
 }
 
+type Health struct {
+	Writer   string `json:"writer"`
+	*Bugsnag `json:"bugsnag"`
+}
+
+type Bugsnag struct {
+	Key string `json:"key"`
+	Env string `json:"env"`
+}
+
 // NewFromFile creates a new *Config with the defaults replaced by the config  in
 // the file at the given path
 func NewFromFile(filePath string) (*Config, error) {
@@ -105,6 +115,9 @@ func NewFromFile(filePath string) (*Config, error) {
 	streamFilterViper := newSubViper(streamViper, keysStreamFilter)
 	streamProducerViper := newSubViper(streamViper, keysStreamProducer)
 	streamConsumerViper := newSubViper(streamViper, keysStreamConsumer)
+
+	healthViper := newSubViper(v, keysHealth)
+	healthBugsnagViper := newSubViper(healthViper, keysHealthBugsnag)
 
 	// Get chains config
 	chains, err := newChainsConfig(v)
@@ -153,6 +166,13 @@ func NewFromFile(filePath string) (*Config, error) {
 			Consumer: Consumer{
 				StartTime: streamConsumerViper.GetTime(keysStreamConsumerStartTime),
 				GroupName: streamConsumerViper.GetString(keysStreamConsumerGroupName),
+			},
+		},
+		Health: Health{
+			Writer: healthBugsnagViper.GetString(keysHealthWriter),
+			Bugsnag: &Bugsnag{
+				Key: healthBugsnagViper.GetString(keysHealthBugsnagKey),
+				Env: healthBugsnagViper.GetString(keysHealthBugsnagEnv),
 			},
 		},
 	}, nil

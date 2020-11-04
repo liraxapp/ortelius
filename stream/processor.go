@@ -51,7 +51,7 @@ type ProcessorManager struct {
 
 // NewProcessorManager creates a new *ProcessorManager ready for listening
 func NewProcessorManager(conf cfg.Config, factory ProcessorFactory) (*ProcessorManager, error) {
-	conns, err := services.NewConnectionsFromConfig(conf.Services)
+	conns, err := services.NewConnectionsFromConfig(conf.Services, conf.Health)
 	if err != nil {
 		return nil, err
 	}

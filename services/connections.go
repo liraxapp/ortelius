@@ -13,6 +13,7 @@ import (
 	"github.com/ava-labs/avalanchego/utils/wrappers"
 	"github.com/go-redis/redis/v8"
 	"github.com/gocraft/health"
+	"github.com/gocraft/health/sinks/bugsnag"
 
 	"github.com/ava-labs/ortelius/cfg"
 	"github.com/ava-labs/ortelius/services/cache"
@@ -28,10 +29,10 @@ type Connections struct {
 	cache *cache.Cache
 }
 
-func NewConnectionsFromConfig(conf cfg.Services) (*Connections, error) {
+func NewConnectionsFromConfig(servicesConf cfg.Services, healthConf cfg.Health) (*Connections, error) {
 	// Always create a stream and log
-	stream := NewStream()
-	log, err := logging.New(conf.Logging)
+	stream := NewStream(healthConf)
+	log, err := logging.New(servicesConf.Logging)
 	if err != nil {
 		return nil, err
 	}
@@ -42,12 +43,12 @@ func NewConnectionsFromConfig(conf cfg.Services) (*Connections, error) {
 		redisClient *redis.Client
 	)
 
-	if conf.Redis != nil && conf.Redis.Addr != "" {
-		kvs := health.Kvs{"addr": conf.Redis.Addr, "db": strconv.Itoa(conf.Redis.DB)}
+	if servicesConf.Redis != nil && servicesConf.Redis.Addr != "" {
+		kvs := health.Kvs{"addr": servicesConf.Redis.Addr, "db": strconv.Itoa(servicesConf.Redis.DB)}
 		redisClient, err = NewRedisConn(&redis.Options{
-			DB:       conf.Redis.DB,
-			Addr:     conf.Redis.Addr,
-			Password: conf.Redis.Password,
+			DB:       servicesConf.Redis.DB,
+			Addr:     servicesConf.Redis.Addr,
+			Password: servicesConf.Redis.Password,
 		})
 		if err != nil {
 			return nil, stream.EventErrKv("connect.redis", err, kvs)
@@ -57,17 +58,17 @@ func NewConnectionsFromConfig(conf cfg.Services) (*Connections, error) {
 		stream.Event("connect.redis.skip")
 	}
 
-	if conf.DB != nil || conf.DB.Driver == db.DriverNone {
+	if servicesConf.DB != nil || servicesConf.DB.Driver == db.DriverNone {
 		// Setup logging kvs
-		kvs := health.Kvs{"driver": conf.DB.Driver}
-		loggableDSN, err := db.SanitizedDSN(conf.DB)
+		kvs := health.Kvs{"driver": servicesConf.DB.Driver}
+		loggableDSN, err := db.SanitizedDSN(servicesConf.DB)
 		if err != nil {
 			return nil, stream.EventErrKv("connect.db.sanitize_dsn", err, kvs)
 		}
 		kvs["dsn"] = loggableDSN
 
 		// Create connection
-		dbConn, err = db.New(stream, *conf.DB)
+		dbConn, err = db.New(stream, *servicesConf.DB)
 		if err != nil {
 			return nil, stream.EventErrKv("connect.db", err, kvs)
 		}
@@ -110,9 +111,25 @@ func (c Connections) Close() error {
 	return errs.Err
 }
 
-func NewStream() *health.Stream {
+func NewStream(conf cfg.Health) *health.Stream {
 	s := health.NewStream()
-	s.AddSink(&health.WriterSink{Writer: os.Stdout})
+
+	switch conf.Writer {
+	case "none":
+	case "":
+	case "stdout":
+		s.AddSink(&health.WriterSink{Writer: os.Stdout})
+		s.EventKv("sink.added.writer", health.Kvs{"file": "stdout"})
+	}
+
+	if conf.Bugsnag != nil {
+		s.AddSink(bugsnag.NewSink(&bugsnag.Config{
+			APIKey:       conf.Bugsnag.Key,
+			ReleaseStage: conf.Bugsnag.Env,
+		}))
+		s.EventKv("sink.added.bugsnag", health.Kvs{"stage": conf.Bugsnag.Env})
+	}
+
 	return s
 }
 

@@ -42,4 +42,10 @@ const (
 	keysStreamFilter    = "filter"
 	keysStreamFilterMin = "min"
 	keysStreamFilterMax = "max"
+
+	keysHealth           = "health"
+	keysHealthWriter     = "writer"
+	keysHealthBugsnag    = "bugsnag"
+	keysHealthBugsnagKey = "key"
+	keysHealthBugsnagEnv = "env"
 )

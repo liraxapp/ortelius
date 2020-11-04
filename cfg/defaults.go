@@ -30,5 +30,12 @@ const defaultJSON = `{
     "consumer": {
       "groupName": "indexer"
     }
+  },
+  "health": {
+    "writer": "stdout",
+	"bugsnag": {
+	  "key": "apikey",
+      "env": "dev"
+	}
   }
 }`

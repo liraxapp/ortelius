@@ -58,7 +58,7 @@ func routerFactoryForVM(name string) (*registeredRouter, error) {
 }
 
 func newRouter(conf cfg.Config) (*web.Router, error) {
-	connections, err := services.NewConnectionsFromConfig(conf.Services)
+	connections, err := services.NewConnectionsFromConfig(conf.Services, conf.Health)
 	if err != nil {
 		return nil, err
 	}
