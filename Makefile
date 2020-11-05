@@ -61,13 +61,11 @@ production_logs: ## Logs for production mode
 ##
 .PHONY: tests profile_tests check_binaries
 
-tests: ## Run tests
+tests: ## Run tests with coverage profiling
 	go test -i ./...
-	go test -v -cover ./...
+	go test -v -coverprofile=coverage.out ./...
 
-tests_profile: ## Run tests with coverage profiling
-	go test -i ./...
-	go test -v -coverprofile=coverage.out -coverpkg=./... ./...
+tests_coverage: tests ## Opens HTML test coverage profile
 	go tool cover -html=./coverage.out
 
 check_binaries: ## Ensure the binaries build
