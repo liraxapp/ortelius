@@ -42,7 +42,6 @@ func (m *Metrics) CounterInit(name string, help string) {
 
 	if _, ok := m.counters[name]; ok {
 		return
-
 	}
 	counter := promauto.NewCounter(prometheus.CounterOpts{
 		Name: name,
@@ -78,7 +77,6 @@ func (m *Metrics) HistogramInit(name string, help string, buckets []float64) {
 
 	if _, ok := m.histograms[name]; ok {
 		return
-
 	}
 
 	histogram := promauto.NewHistogram(prometheus.HistogramOpts{
