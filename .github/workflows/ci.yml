@@ -31,7 +31,7 @@ jobs:
       - name: Run tests
         run: make tests
       - name: Save test coverage
-        uses: shogo82148/actions-gove
-        if: matrix.go == '1.15'ralls@v1
+        uses: shogo82148/actions-goveralls@v1
+        if: matrix.go == '1.15'
         with:
           path-to-profile: coverage.out
