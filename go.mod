@@ -1,4 +1,4 @@
-module github.com/ava-labs/ortelius
+module github.com/liraxapp/ortelius
 
 go 1.15
 
