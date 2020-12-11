@@ -13,7 +13,7 @@ import (
 	"path"
 	"time"
 
-	"github.com/ava-labs/avalanchego/utils/wrappers"
+	"github.com/liraxapp/avalanchego/utils/wrappers"
 	"github.com/ava-labs/ortelius/cfg"
 	"github.com/ava-labs/ortelius/stream"
 	"github.com/segmentio/kafka-go"

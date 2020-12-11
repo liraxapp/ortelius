@@ -9,7 +9,7 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/ava-labs/avalanchego/ids"
+	"github.com/liraxapp/avalanchego/ids"
 	"github.com/gocraft/dbr/v2"
 )
 

@@ -11,7 +11,7 @@ import (
 
 	"github.com/ava-labs/ortelius/utils"
 
-	avalancheGoUtils "github.com/ava-labs/avalanchego/utils"
+	avalancheGoUtils "github.com/liraxapp/avalanchego/utils"
 
 	"github.com/ava-labs/ortelius/services/indexes/models"
 

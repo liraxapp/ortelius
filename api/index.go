@@ -6,7 +6,7 @@ package api
 import (
 	"encoding/json"
 
-	"github.com/ava-labs/avalanchego/ids"
+	"github.com/liraxapp/avalanchego/ids"
 	"github.com/ava-labs/ortelius/services/indexes/models"
 )
 

@@ -9,8 +9,8 @@ import (
 
 	"github.com/ava-labs/ortelius/utils"
 
-	"github.com/ava-labs/avalanchego/ids"
-	avlancheGoUtils "github.com/ava-labs/avalanchego/utils"
+	"github.com/liraxapp/avalanchego/ids"
+	avlancheGoUtils "github.com/liraxapp/avalanchego/utils"
 	"github.com/ava-labs/ortelius/cfg"
 	"github.com/ava-labs/ortelius/services"
 	"github.com/ava-labs/ortelius/services/indexes/avm"

@@ -7,7 +7,7 @@ import (
 
 	"github.com/gocraft/dbr/v2"
 
-	"github.com/ava-labs/avalanchego/utils/logging"
+	"github.com/liraxapp/avalanchego/utils/logging"
 	"github.com/ava-labs/ortelius/cfg"
 	"github.com/ava-labs/ortelius/services/db"
 

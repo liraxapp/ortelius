@@ -10,7 +10,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ava-labs/avalanchego/utils/logging"
+	"github.com/liraxapp/avalanchego/utils/logging"
 	"github.com/segmentio/kafka-go"
 
 	"github.com/ava-labs/ortelius/cfg"

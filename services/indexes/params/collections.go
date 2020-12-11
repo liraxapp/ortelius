@@ -9,7 +9,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ava-labs/avalanchego/ids"
+	"github.com/liraxapp/avalanchego/ids"
 	"github.com/gocraft/dbr/v2"
 
 	"github.com/ava-labs/ortelius/services/indexes/models"

@@ -3,9 +3,9 @@ package params
 import (
 	"testing"
 
-	"github.com/ava-labs/avalanchego/utils/hashing"
+	"github.com/liraxapp/avalanchego/utils/hashing"
 
-	"github.com/ava-labs/avalanchego/ids"
+	"github.com/liraxapp/avalanchego/ids"
 )
 
 func TestForValueChainID(t *testing.T) {

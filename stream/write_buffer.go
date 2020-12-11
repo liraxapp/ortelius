@@ -9,9 +9,9 @@ import (
 
 	"github.com/ava-labs/ortelius/services/metrics"
 
-	"github.com/ava-labs/avalanchego/utils/logging"
+	"github.com/liraxapp/avalanchego/utils/logging"
 
-	"github.com/ava-labs/avalanchego/utils/hashing"
+	"github.com/liraxapp/avalanchego/utils/hashing"
 	"github.com/segmentio/kafka-go"
 )
 

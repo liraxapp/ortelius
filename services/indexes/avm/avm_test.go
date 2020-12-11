@@ -9,8 +9,8 @@ import (
 	"time"
 
 	"github.com/alicebob/miniredis"
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/logging"
+	"github.com/liraxapp/avalanchego/ids"
+	"github.com/liraxapp/avalanchego/utils/logging"
 	"github.com/ava-labs/ortelius/cfg"
 	"github.com/ava-labs/ortelius/services"
 	"github.com/ava-labs/ortelius/services/indexes/avax"

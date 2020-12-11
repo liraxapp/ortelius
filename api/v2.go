@@ -7,7 +7,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/ava-labs/avalanchego/ids"
+	"github.com/liraxapp/avalanchego/ids"
 	"github.com/ava-labs/ortelius/services/indexes/params"
 	"github.com/gocraft/web"
 )

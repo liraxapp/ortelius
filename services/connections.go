@@ -9,8 +9,8 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/ava-labs/avalanchego/utils/logging"
-	"github.com/ava-labs/avalanchego/utils/wrappers"
+	"github.com/liraxapp/avalanchego/utils/logging"
+	"github.com/liraxapp/avalanchego/utils/wrappers"
 	"github.com/go-redis/redis/v8"
 	"github.com/gocraft/health"
 

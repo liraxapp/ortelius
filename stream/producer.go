@@ -6,9 +6,9 @@ package stream
 import (
 	"fmt"
 
-	"github.com/ava-labs/avalanchego/utils/logging"
+	"github.com/liraxapp/avalanchego/utils/logging"
 
-	"github.com/ava-labs/avalanchego/ipcs/socket"
+	"github.com/liraxapp/avalanchego/ipcs/socket"
 	"github.com/ava-labs/ortelius/cfg"
 	"github.com/ava-labs/ortelius/services/metrics"
 )

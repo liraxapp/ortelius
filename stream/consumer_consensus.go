@@ -9,8 +9,8 @@ import (
 
 	"github.com/ava-labs/ortelius/services/metrics"
 
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/wrappers"
+	"github.com/liraxapp/avalanchego/ids"
+	"github.com/liraxapp/avalanchego/utils/wrappers"
 	"github.com/segmentio/kafka-go"
 
 	"github.com/ava-labs/ortelius/cfg"

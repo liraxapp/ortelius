@@ -15,7 +15,7 @@ import (
 
 	"github.com/ava-labs/ortelius/replay"
 
-	"github.com/ava-labs/avalanchego/utils/logging"
+	"github.com/liraxapp/avalanchego/utils/logging"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 
 	"github.com/spf13/cobra"

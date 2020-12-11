@@ -16,14 +16,14 @@ import (
 
 	"github.com/ava-labs/ortelius/services/db"
 
-	"github.com/ava-labs/avalanchego/genesis"
-	"github.com/ava-labs/avalanchego/ids"
-	"github.com/ava-labs/avalanchego/utils/codec"
-	"github.com/ava-labs/avalanchego/utils/hashing"
-	"github.com/ava-labs/avalanchego/utils/wrappers"
-	"github.com/ava-labs/avalanchego/vms/components/avax"
-	"github.com/ava-labs/avalanchego/vms/platformvm"
-	"github.com/ava-labs/avalanchego/vms/secp256k1fx"
+	"github.com/liraxapp/avalanchego/genesis"
+	"github.com/liraxapp/avalanchego/ids"
+	"github.com/liraxapp/avalanchego/utils/codec"
+	"github.com/liraxapp/avalanchego/utils/hashing"
+	"github.com/liraxapp/avalanchego/utils/wrappers"
+	"github.com/liraxapp/avalanchego/vms/components/avax"
+	"github.com/liraxapp/avalanchego/vms/platformvm"
+	"github.com/liraxapp/avalanchego/vms/secp256k1fx"
 
 	"github.com/ava-labs/ortelius/services"
 	avaxIndexer "github.com/ava-labs/ortelius/services/indexes/avax"
