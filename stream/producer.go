@@ -9,8 +9,8 @@ import (
 	"github.com/liraxapp/avalanchego/utils/logging"
 
 	"github.com/liraxapp/avalanchego/ipcs/socket"
-	"github.com/ava-labs/ortelius/cfg"
-	"github.com/ava-labs/ortelius/services/metrics"
+	"github.com/liraxapp/ortelius/cfg"
+	"github.com/liraxapp/ortelius/services/metrics"
 )
 
 // producer reads from the socket and writes to the event stream

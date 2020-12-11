@@ -11,11 +11,11 @@ import (
 	"github.com/alicebob/miniredis"
 	"github.com/liraxapp/avalanchego/ids"
 	"github.com/liraxapp/avalanchego/utils/logging"
-	"github.com/ava-labs/ortelius/cfg"
-	"github.com/ava-labs/ortelius/services"
-	"github.com/ava-labs/ortelius/services/indexes/avax"
-	"github.com/ava-labs/ortelius/services/indexes/models"
-	"github.com/ava-labs/ortelius/services/indexes/params"
+	"github.com/liraxapp/ortelius/cfg"
+	"github.com/liraxapp/ortelius/services"
+	"github.com/liraxapp/ortelius/services/indexes/avax"
+	"github.com/liraxapp/ortelius/services/indexes/models"
+	"github.com/liraxapp/ortelius/services/indexes/params"
 )
 
 var (

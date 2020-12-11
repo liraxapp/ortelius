@@ -13,21 +13,21 @@ import (
 	"sync"
 	"syscall"
 
-	"github.com/ava-labs/ortelius/replay"
+	"github.com/liraxapp/ortelius/replay"
 
 	"github.com/liraxapp/avalanchego/utils/logging"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 
 	"github.com/spf13/cobra"
 
-	"github.com/ava-labs/ortelius/api"
-	"github.com/ava-labs/ortelius/cfg"
-	"github.com/ava-labs/ortelius/stream"
-	"github.com/ava-labs/ortelius/stream/consumers"
+	"github.com/liraxapp/ortelius/api"
+	"github.com/liraxapp/ortelius/cfg"
+	"github.com/liraxapp/ortelius/stream"
+	"github.com/liraxapp/ortelius/stream/consumers"
 
 	// Register service plugins
-	_ "github.com/ava-labs/ortelius/services/indexes/avm"
-	_ "github.com/ava-labs/ortelius/services/indexes/pvm"
+	_ "github.com/liraxapp/ortelius/services/indexes/avm"
+	_ "github.com/liraxapp/ortelius/services/indexes/pvm"
 )
 
 const (

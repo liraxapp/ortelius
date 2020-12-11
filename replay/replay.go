@@ -7,16 +7,16 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ava-labs/ortelius/utils"
+	"github.com/liraxapp/ortelius/utils"
 
 	"github.com/liraxapp/avalanchego/ids"
 	avlancheGoUtils "github.com/liraxapp/avalanchego/utils"
-	"github.com/ava-labs/ortelius/cfg"
-	"github.com/ava-labs/ortelius/services"
-	"github.com/ava-labs/ortelius/services/indexes/avm"
-	"github.com/ava-labs/ortelius/services/indexes/pvm"
-	"github.com/ava-labs/ortelius/stream"
-	"github.com/ava-labs/ortelius/stream/consumers"
+	"github.com/liraxapp/ortelius/cfg"
+	"github.com/liraxapp/ortelius/services"
+	"github.com/liraxapp/ortelius/services/indexes/avm"
+	"github.com/liraxapp/ortelius/services/indexes/pvm"
+	"github.com/liraxapp/ortelius/stream"
+	"github.com/liraxapp/ortelius/stream/consumers"
 	"github.com/segmentio/kafka-go"
 )
 

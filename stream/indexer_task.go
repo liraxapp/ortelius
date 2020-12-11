@@ -7,16 +7,16 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ava-labs/ortelius/services/metrics"
+	"github.com/liraxapp/ortelius/services/metrics"
 
-	"github.com/ava-labs/ortelius/utils"
+	"github.com/liraxapp/ortelius/utils"
 
 	avalancheGoUtils "github.com/liraxapp/avalanchego/utils"
 
-	"github.com/ava-labs/ortelius/services/indexes/models"
+	"github.com/liraxapp/ortelius/services/indexes/models"
 
-	"github.com/ava-labs/ortelius/services"
-	"github.com/ava-labs/ortelius/services/db"
+	"github.com/liraxapp/ortelius/services"
+	"github.com/liraxapp/ortelius/services/db"
 	"github.com/gocraft/dbr/v2"
 )
 

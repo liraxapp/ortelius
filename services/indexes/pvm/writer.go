@@ -10,11 +10,11 @@ import (
 	"reflect"
 	"time"
 
-	"github.com/ava-labs/ortelius/cfg"
+	"github.com/liraxapp/ortelius/cfg"
 
-	"github.com/ava-labs/ortelius/stream"
+	"github.com/liraxapp/ortelius/stream"
 
-	"github.com/ava-labs/ortelius/services/db"
+	"github.com/liraxapp/ortelius/services/db"
 
 	"github.com/liraxapp/avalanchego/genesis"
 	"github.com/liraxapp/avalanchego/ids"
@@ -25,9 +25,9 @@ import (
 	"github.com/liraxapp/avalanchego/vms/platformvm"
 	"github.com/liraxapp/avalanchego/vms/secp256k1fx"
 
-	"github.com/ava-labs/ortelius/services"
-	avaxIndexer "github.com/ava-labs/ortelius/services/indexes/avax"
-	"github.com/ava-labs/ortelius/services/indexes/models"
+	"github.com/liraxapp/ortelius/services"
+	avaxIndexer "github.com/liraxapp/ortelius/services/indexes/avax"
+	"github.com/liraxapp/ortelius/services/indexes/models"
 )
 
 var (

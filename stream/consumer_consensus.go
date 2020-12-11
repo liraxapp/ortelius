@@ -7,14 +7,14 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/ava-labs/ortelius/services/metrics"
+	"github.com/liraxapp/ortelius/services/metrics"
 
 	"github.com/liraxapp/avalanchego/ids"
 	"github.com/liraxapp/avalanchego/utils/wrappers"
 	"github.com/segmentio/kafka-go"
 
-	"github.com/ava-labs/ortelius/cfg"
-	"github.com/ava-labs/ortelius/services"
+	"github.com/liraxapp/ortelius/cfg"
+	"github.com/liraxapp/ortelius/services"
 )
 
 // consumer takes events from Kafka and sends them to a service consumer

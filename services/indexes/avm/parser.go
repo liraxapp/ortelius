@@ -15,7 +15,7 @@ import (
 	"github.com/liraxapp/avalanchego/vms/nftfx"
 	"github.com/liraxapp/avalanchego/vms/platformvm"
 	"github.com/liraxapp/avalanchego/vms/secp256k1fx"
-	"github.com/ava-labs/ortelius/utils"
+	"github.com/liraxapp/ortelius/utils"
 	"github.com/prometheus/client_golang/prometheus"
 )
 

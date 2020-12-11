@@ -14,8 +14,8 @@ import (
 	"time"
 
 	"github.com/liraxapp/avalanchego/utils/wrappers"
-	"github.com/ava-labs/ortelius/cfg"
-	"github.com/ava-labs/ortelius/stream"
+	"github.com/liraxapp/ortelius/cfg"
+	"github.com/liraxapp/ortelius/stream"
 	"github.com/segmentio/kafka-go"
 )
 

@@ -12,7 +12,7 @@ import (
 	"github.com/liraxapp/avalanchego/ids"
 	"github.com/gocraft/dbr/v2"
 
-	"github.com/ava-labs/ortelius/services/indexes/models"
+	"github.com/liraxapp/ortelius/services/indexes/models"
 )
 
 const (

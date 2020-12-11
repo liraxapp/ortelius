@@ -13,7 +13,7 @@ import (
 	"github.com/liraxapp/avalanchego/utils/logging"
 	"github.com/segmentio/kafka-go"
 
-	"github.com/ava-labs/ortelius/cfg"
+	"github.com/liraxapp/ortelius/cfg"
 )
 
 var (

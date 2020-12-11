@@ -11,14 +11,14 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/ava-labs/ortelius/cfg"
+	"github.com/liraxapp/ortelius/cfg"
 
 	"github.com/liraxapp/avalanchego/ids"
-	"github.com/ava-labs/ortelius/services/cache"
-	"github.com/ava-labs/ortelius/services/indexes/avax"
-	"github.com/ava-labs/ortelius/services/indexes/avm"
-	"github.com/ava-labs/ortelius/services/indexes/params"
-	"github.com/ava-labs/ortelius/services/indexes/pvm"
+	"github.com/liraxapp/ortelius/services/cache"
+	"github.com/liraxapp/ortelius/services/indexes/avax"
+	"github.com/liraxapp/ortelius/services/indexes/avm"
+	"github.com/liraxapp/ortelius/services/indexes/params"
+	"github.com/liraxapp/ortelius/services/indexes/pvm"
 	"github.com/gocraft/health"
 	"github.com/gocraft/web"
 )

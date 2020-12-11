@@ -11,12 +11,12 @@ import (
 	"github.com/liraxapp/avalanchego/genesis"
 	"github.com/liraxapp/avalanchego/utils/logging"
 	avmVM "github.com/liraxapp/avalanchego/vms/avm"
-	"github.com/ava-labs/ortelius/cfg"
-	"github.com/ava-labs/ortelius/services"
-	"github.com/ava-labs/ortelius/services/indexes/avax"
-	"github.com/ava-labs/ortelius/services/indexes/avm"
-	"github.com/ava-labs/ortelius/services/indexes/models"
-	"github.com/ava-labs/ortelius/services/indexes/pvm"
+	"github.com/liraxapp/ortelius/cfg"
+	"github.com/liraxapp/ortelius/services"
+	"github.com/liraxapp/ortelius/services/indexes/avax"
+	"github.com/liraxapp/ortelius/services/indexes/avm"
+	"github.com/liraxapp/ortelius/services/indexes/models"
+	"github.com/liraxapp/ortelius/services/indexes/pvm"
 	"github.com/gocraft/web"
 )
 

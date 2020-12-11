@@ -8,7 +8,7 @@ import (
 	"time"
 
 	"github.com/liraxapp/avalanchego/ids"
-	"github.com/ava-labs/ortelius/services/indexes/params"
+	"github.com/liraxapp/ortelius/services/indexes/params"
 	"github.com/gocraft/web"
 )
 

@@ -8,12 +8,12 @@ import (
 	"github.com/gocraft/dbr/v2"
 
 	"github.com/liraxapp/avalanchego/utils/logging"
-	"github.com/ava-labs/ortelius/cfg"
-	"github.com/ava-labs/ortelius/services/db"
+	"github.com/liraxapp/ortelius/cfg"
+	"github.com/liraxapp/ortelius/services/db"
 
-	"github.com/ava-labs/ortelius/services/indexes/models"
+	"github.com/liraxapp/ortelius/services/indexes/models"
 
-	"github.com/ava-labs/ortelius/services"
+	"github.com/liraxapp/ortelius/services"
 	"github.com/gocraft/health"
 )
 

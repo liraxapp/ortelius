@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"reflect"
 
-	"github.com/ava-labs/ortelius/cfg"
+	"github.com/liraxapp/ortelius/cfg"
 
 	"github.com/gocraft/dbr/v2"
 
@@ -21,9 +21,9 @@ import (
 	"github.com/liraxapp/avalanchego/vms/secp256k1fx"
 	"github.com/gocraft/health"
 
-	"github.com/ava-labs/ortelius/services"
-	"github.com/ava-labs/ortelius/services/db"
-	"github.com/ava-labs/ortelius/services/indexes/models"
+	"github.com/liraxapp/ortelius/services"
+	"github.com/liraxapp/ortelius/services/db"
+	"github.com/liraxapp/ortelius/services/indexes/models"
 )
 
 var (

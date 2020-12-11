@@ -8,7 +8,7 @@ import (
 	"fmt"
 	"path"
 
-	"github.com/ava-labs/ortelius/services"
+	"github.com/liraxapp/ortelius/services"
 )
 
 var (

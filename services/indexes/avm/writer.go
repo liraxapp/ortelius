@@ -12,14 +12,14 @@ import (
 
 	"github.com/liraxapp/avalanchego/database"
 
-	"github.com/ava-labs/ortelius/utils"
+	"github.com/liraxapp/ortelius/utils"
 
 	"github.com/liraxapp/avalanchego/snow/engine/avalanche/state"
 
 	"github.com/liraxapp/avalanchego/snow"
-	"github.com/ava-labs/ortelius/cfg"
+	"github.com/liraxapp/ortelius/cfg"
 
-	"github.com/ava-labs/ortelius/stream"
+	"github.com/liraxapp/ortelius/stream"
 
 	"github.com/liraxapp/avalanchego/ids"
 
@@ -37,10 +37,10 @@ import (
 	"github.com/gocraft/health"
 	"github.com/palantir/stacktrace"
 
-	"github.com/ava-labs/ortelius/services"
-	"github.com/ava-labs/ortelius/services/db"
-	"github.com/ava-labs/ortelius/services/indexes/avax"
-	"github.com/ava-labs/ortelius/services/indexes/models"
+	"github.com/liraxapp/ortelius/services"
+	"github.com/liraxapp/ortelius/services/db"
+	"github.com/liraxapp/ortelius/services/indexes/avax"
+	"github.com/liraxapp/ortelius/services/indexes/models"
 )
 
 var (

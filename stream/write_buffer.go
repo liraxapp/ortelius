@@ -7,7 +7,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/ava-labs/ortelius/services/metrics"
+	"github.com/liraxapp/ortelius/services/metrics"
 
 	"github.com/liraxapp/avalanchego/utils/logging"
 

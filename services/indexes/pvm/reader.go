@@ -6,13 +6,13 @@ package pvm
 import (
 	"context"
 
-	"github.com/ava-labs/ortelius/cfg"
+	"github.com/liraxapp/ortelius/cfg"
 
 	"github.com/liraxapp/avalanchego/ids"
 
-	"github.com/ava-labs/ortelius/services"
-	"github.com/ava-labs/ortelius/services/indexes/models"
-	"github.com/ava-labs/ortelius/services/indexes/params"
+	"github.com/liraxapp/ortelius/services"
+	"github.com/liraxapp/ortelius/services/indexes/models"
+	"github.com/liraxapp/ortelius/services/indexes/params"
 )
 
 type Reader struct {

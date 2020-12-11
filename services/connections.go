@@ -14,9 +14,9 @@ import (
 	"github.com/go-redis/redis/v8"
 	"github.com/gocraft/health"
 
-	"github.com/ava-labs/ortelius/cfg"
-	"github.com/ava-labs/ortelius/services/cache"
-	"github.com/ava-labs/ortelius/services/db"
+	"github.com/liraxapp/ortelius/cfg"
+	"github.com/liraxapp/ortelius/services/cache"
+	"github.com/liraxapp/ortelius/services/db"
 )
 
 type Connections struct {
